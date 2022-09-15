@@ -16,14 +16,16 @@ namespace QuizGame
         static void Main(string[] args)
         {
             UI.DisplayWelcomeInformation();
+
             bool played = false;
+
             while(!played)
             {
                 QuizCard Question = new QuizCard();
                 List<QuizCard> ListOfQuestion = Logic.ListOfQuiz();
 
                 Random random = new Random();
-                int i = random.Next(ListOfQuestion.Count);
+                int i = random.Next(ListOfQuestion.);
 
                 UI.DisplayTheQuestion(ListOfQuestion[i]);
 
@@ -36,10 +38,6 @@ namespace QuizGame
                 UI.DisplatRightAnswer(solution);
             }
             
-
-
-            //add loops to play more than 1 gamecard
-
             Console.ReadLine();
         }
     }
