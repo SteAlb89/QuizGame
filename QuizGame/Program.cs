@@ -17,7 +17,6 @@ namespace QuizGame
         {
             UI.DisplayWelcomeInformation();
 
-            
 
             while(true)
             {
@@ -26,11 +25,12 @@ namespace QuizGame
 
                 Random random = new Random();
                 int i = random.Next(questionList.Count);
-                
 
-                UI.DisplayQuestion(questionList[i]);
+                QuizCard question = questionList[i];
 
-                UI.DisplayAnswer(questionList[i]);
+                UI.DisplayQuestion(question);
+
+                UI.DisplayAnswer(question);
 
                 int selectedAnswer = UI.ChooseAnswer();
 
