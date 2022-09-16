@@ -10,19 +10,19 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine("Welcome To Our Interactive Game ~~ QUIZ ~~~ ");
         }
-        public static void DisplayTheQuestion(QuizCard question)
+        public static void DisplayQuestion(QuizCard question)
         {
             Console.WriteLine("************************************************");
             Console.WriteLine(question.Question);
         }
       
-        public static void DisplayTheAnswer(QuizCard answer)
+        public static void DisplayAnswer(QuizCard answer)
         {
             answer.Answers.ForEach(Console.WriteLine);
             Console.WriteLine("************************************************");
 
         }
-        public static int ChooseAnAnswer()
+        public static int ChooseAnswer()
         {
             Console.Write("Select 1, 2, 3 or 4: ");
             int selectedAnswer = int.Parse(Console.ReadLine());
@@ -30,7 +30,7 @@ namespace QuizGame
             return selectedAnswer;
         }
 
-        public static void DisplatRightAnswer(bool right)
+        public static void DisplayRightAnswer(bool right)
         {
             if(right)
             {

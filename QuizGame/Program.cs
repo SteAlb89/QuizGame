@@ -17,25 +17,26 @@ namespace QuizGame
         {
             UI.DisplayWelcomeInformation();
 
-            bool played = false;
+            
 
-            while(!played)
+            while(true)
             {
                 QuizCard Question = new QuizCard();
-                List<QuizCard> ListOfQuestion = Logic.ListOfQuiz();
+                List<QuizCard> questionList = Logic.QuizList();
 
                 Random random = new Random();
-                int i = random.Next(ListOfQuestion.);
+                int i = random.Next(questionList.Count);
+                
 
-                UI.DisplayTheQuestion(ListOfQuestion[i]);
+                UI.DisplayQuestion(questionList[i]);
 
-                UI.DisplayTheAnswer(ListOfQuestion[i]);
+                UI.DisplayAnswer(questionList[i]);
 
-                int selectedAnswer = UI.ChooseAnAnswer();
+                int selectedAnswer = UI.ChooseAnswer();
 
                 bool solution = Logic.CheckAnswer(selectedAnswer, Question);
 
-                UI.DisplatRightAnswer(solution);
+                UI.DisplayRightAnswer(solution);
             }
             
             Console.ReadLine();
