@@ -35,18 +35,16 @@ namespace QuizGame
 
             return selectedAnswer - 1;
         }
-        //Display message based on the condition
-        public static void DisplayRightAnswerOrNot(bool right)
+        //Display how many corect answers he knew
+        public static void DisplayRightAnswerOrNot(bool right, int corectScore)
         {
             if (right)
             {
-                Console.WriteLine("The selected answer is correct!");
-            }
-            else
-            {
-                Console.WriteLine("The selected answer is wrong!");
+                corectScore++;
+                Console.WriteLine($"You had {corectScore} correct answers");
             }
         }
+
     }
 
 }

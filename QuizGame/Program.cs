@@ -8,16 +8,16 @@ namespace QuizGame
         static void Main(string[] args)
         {
             UI.DisplayWelcomeInformation();
+            List<QuizCard> questionList = Logic.QuizList();
+
+            Random random = new Random();
 
 
-            while (true)
+            for (int i = 0; i < questionList.Count; i++)
             {
-                List<QuizCard> questionList = Logic.QuizList();
+                int j = random.Next(questionList.Count);
 
-                Random random = new Random();
-                int i = random.Next(questionList.Count);
-
-                QuizCard question = questionList[i];
+                QuizCard question = questionList[j];
 
                 UI.DisplayQuestion(question);
 
@@ -25,9 +25,9 @@ namespace QuizGame
 
                 int selectedAnswer = UI.ChooseAnswer();
 
-                bool corectSolution = Logic.CheckAnswer(selectedAnswer, questionList[i]);
+                bool corectSolution = Logic.CheckAnswer(selectedAnswer, questionList[j]);
 
-                UI.DisplayRightAnswerOrNot(corectSolution);
+                UI.DisplayRightAnswerOrNot(corectSolution, i);
             }
 
             Console.ReadLine();
