@@ -17,7 +17,7 @@ namespace QuizGame
             question1.Answers.Add("2. Red");
             question1.Answers.Add("3. Blue");
             question1.Answers.Add("4. White");
-            question1.RightAnswer = 3;
+            question1.RightAnswer = 2;
 
             QuizCard question2 = new QuizCard();
             question2.Question = "How many bones are in the human body?";
@@ -25,7 +25,7 @@ namespace QuizGame
             question2.Answers.Add("2. 201");
             question2.Answers.Add("3. 213");
             question2.Answers.Add("4. 207");
-            question2.RightAnswer = 1;
+            question2.RightAnswer = 0;
 
             QuizCard question3 = new QuizCard();
             question3.Question = "What is the only food that cannot go bad?";
@@ -33,7 +33,7 @@ namespace QuizGame
             question3.Answers.Add("2. Peanut Butter");
             question3.Answers.Add("3. Canned Tuna");
             question3.Answers.Add("4. Honey");
-            question3.RightAnswer = 4;
+            question3.RightAnswer = 3;
 
             QuizCard question4 = new QuizCard();
             question4.Question = "Which of these EU countries does not use the euro as its currency?";
@@ -41,7 +41,7 @@ namespace QuizGame
             question4.Answers.Add("2. Denmark");
             question4.Answers.Add("3. Sweden");
             question4.Answers.Add("4. All of the above");
-            question4.RightAnswer = 4;
+            question4.RightAnswer = 3;
 
             QuizCard question5 = new QuizCard();
             question5.Question = "Which country’s national animal is a unicorn?";
@@ -49,7 +49,7 @@ namespace QuizGame
             question5.Answers.Add("2. New Zealand");
             question5.Answers.Add("3. France");
             question5.Answers.Add("4. Egypt");
-            question5.RightAnswer = 1;
+            question5.RightAnswer = 0;
 
             List<QuizCard> questionList = new List<QuizCard>();
             questionList.Add(question1);
@@ -62,6 +62,7 @@ namespace QuizGame
         }
         public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
         {
+            selectedAnswer -= 1;
             if (checkAnswer.RightAnswer == selectedAnswer)
             {
                 return true;
