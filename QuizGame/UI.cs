@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace QuizGame
 {
@@ -15,9 +14,10 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine(question.Question);
         }
-      
+
         public static void DisplayAnswer(QuizCard answer)
         {
+
             answer.Answers.ForEach(Console.WriteLine);
             Console.WriteLine("************************************************");
 
@@ -26,13 +26,17 @@ namespace QuizGame
         {
             Console.Write("Select 1, 2, 3 or 4: ");
             int selectedAnswer = int.Parse(Console.ReadLine());
+            while (selectedAnswer > 4 || selectedAnswer < 1)
+            {
+                Console.Write("Please enter a number between 1 - 4 included: ");
+                selectedAnswer = int.Parse(Console.ReadLine());
+            }
 
             return selectedAnswer;
         }
-
         public static void DisplayRightAnswer(bool right)
         {
-            if(right)
+            if (right)
             {
                 Console.WriteLine("The selected answer is correct!");
             }
@@ -42,5 +46,9 @@ namespace QuizGame
             }
         }
     }
+
 }
+
+
+
 

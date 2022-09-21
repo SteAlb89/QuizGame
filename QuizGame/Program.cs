@@ -1,13 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
-using System.IO.Pipes;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace QuizGame
 {
@@ -18,9 +10,10 @@ namespace QuizGame
             UI.DisplayWelcomeInformation();
 
 
-            while(true)
+            while (true)
             {
                 QuizCard Question = new QuizCard();
+
                 List<QuizCard> questionList = Logic.QuizList();
 
                 Random random = new Random();
@@ -34,11 +27,11 @@ namespace QuizGame
 
                 int selectedAnswer = UI.ChooseAnswer();
 
-                bool solution = Logic.CheckAnswer(selectedAnswer, Question);
+                bool corectSolution = Logic.CheckAnswer(selectedAnswer, questionList[i]);
 
-                UI.DisplayRightAnswer(solution);
+                UI.DisplayRightAnswer(corectSolution);
             }
-            
+
             Console.ReadLine();
         }
     }

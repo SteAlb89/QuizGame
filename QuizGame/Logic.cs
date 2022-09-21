@@ -17,7 +17,7 @@ namespace QuizGame
             question1.Answers.Add("2. Red");
             question1.Answers.Add("3. Blue");
             question1.Answers.Add("4. White");
-            question1.RightAnswer = 2;
+            question1.RightAnswer = 3;
 
             QuizCard question2 = new QuizCard();
             question2.Question = "How many bones are in the human body?";
@@ -25,7 +25,7 @@ namespace QuizGame
             question2.Answers.Add("2. 201");
             question2.Answers.Add("3. 213");
             question2.Answers.Add("4. 207");
-            question2.RightAnswer = 0;
+            question2.RightAnswer = 1;
 
             QuizCard question3 = new QuizCard();
             question3.Question = "What is the only food that cannot go bad?";
@@ -33,14 +33,14 @@ namespace QuizGame
             question3.Answers.Add("2. Peanut Butter");
             question3.Answers.Add("3. Canned Tuna");
             question3.Answers.Add("4. Honey");
-            question3.RightAnswer = 3;
+            question3.RightAnswer = 4;
 
             QuizCard question4 = new QuizCard();
             question4.Question = "Which of these EU countries does not use the euro as its currency?";
             question4.Answers.Add("1. Poland");
             question4.Answers.Add("2. Denmark");
             question4.Answers.Add("3. Sweden");
-            question4.Answers.Add("3. All of the above");
+            question4.Answers.Add("4. All of the above");
             question4.RightAnswer = 4;
 
             QuizCard question5 = new QuizCard();
@@ -49,7 +49,7 @@ namespace QuizGame
             question5.Answers.Add("2. New Zealand");
             question5.Answers.Add("3. France");
             question5.Answers.Add("4. Egypt");
-            question5.RightAnswer = 0;
+            question5.RightAnswer = 1;
 
             List<QuizCard> questionList = new List<QuizCard>();
             questionList.Add(question1);
@@ -60,7 +60,6 @@ namespace QuizGame
 
             return questionList;
         }
-
         public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
         {
             if (checkAnswer.RightAnswer == selectedAnswer)
@@ -72,6 +71,5 @@ namespace QuizGame
                 return false;
             }
         }
-       
     }
 }
