@@ -60,17 +60,10 @@ namespace QuizGame
 
             return questionList;
         }
+        //return true or false based on user input
         public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
         {
-            selectedAnswer -= 1;
-            if (checkAnswer.RightAnswer == selectedAnswer)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (checkAnswer.RightAnswer == selectedAnswer);
         }
     }
 }

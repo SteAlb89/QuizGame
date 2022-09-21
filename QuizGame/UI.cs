@@ -14,7 +14,7 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine(question.Question);
         }
-
+        //Display answer 
         public static void DisplayAnswer(QuizCard answer)
         {
 
@@ -22,6 +22,7 @@ namespace QuizGame
             Console.WriteLine("************************************************");
 
         }
+        //Read user input and convert it to an index
         public static int ChooseAnswer()
         {
             Console.Write("Select 1, 2, 3 or 4: ");
@@ -32,9 +33,10 @@ namespace QuizGame
                 selectedAnswer = int.Parse(Console.ReadLine());
             }
 
-            return selectedAnswer;
+            return selectedAnswer - 1;
         }
-        public static void DisplayRightAnswer(bool right)
+        //Display message based on the condition
+        public static void DisplayRightAnswerOrNot(bool right)
         {
             if (right)
             {

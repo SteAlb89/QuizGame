@@ -27,7 +27,7 @@ namespace QuizGame
 
                 bool corectSolution = Logic.CheckAnswer(selectedAnswer, questionList[i]);
 
-                UI.DisplayRightAnswer(corectSolution);
+                UI.DisplayRightAnswerOrNot(corectSolution);
             }
 
             Console.ReadLine();
