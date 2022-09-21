@@ -12,8 +12,6 @@ namespace QuizGame
 
             while (true)
             {
-                QuizCard Question = new QuizCard();
-
                 List<QuizCard> questionList = Logic.QuizList();
 
                 Random random = new Random();
