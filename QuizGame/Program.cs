@@ -8,16 +8,15 @@ namespace QuizGame
         static void Main(string[] args)
         {
             UI.DisplayWelcomeInformation();
-            List<QuizCard> questionList = Logic.QuizList();
+            List<quizCard> questionList = Logic.QuizList();
 
             Random random = new Random();
-
 
             for (int i = 0; i < questionList.Count; i++)
             {
                 int j = random.Next(questionList.Count);
 
-                QuizCard question = questionList[j];
+                quizCard question = questionList[j];
 
                 UI.DisplayQuestion(question);
 
@@ -29,7 +28,6 @@ namespace QuizGame
 
                 UI.DisplayRightAnswerOrNot(corectSolution, i);
             }
-
             Console.ReadLine();
         }
     }

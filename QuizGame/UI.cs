@@ -9,18 +9,16 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine("Welcome To Our Interactive Game ~~ QUIZ ~~~ ");
         }
-        public static void DisplayQuestion(QuizCard question)
+        public static void DisplayQuestion(quizCard question)
         {
             Console.WriteLine("************************************************");
             Console.WriteLine(question.Question);
         }
         //Display answer 
-        public static void DisplayAnswer(QuizCard answer)
+        public static void DisplayAnswer(quizCard answer)
         {
-
             answer.Answers.ForEach(Console.WriteLine);
             Console.WriteLine("************************************************");
-
         }
         //Read user input and convert it to an index
         public static int ChooseAnswer()
@@ -32,9 +30,9 @@ namespace QuizGame
                 Console.Write("Please enter a number between 1 - 4 included: ");
                 selectedAnswer = int.Parse(Console.ReadLine());
             }
-
             return selectedAnswer - 1;
         }
+
         //Display how many corect answers he knew
         public static void DisplayRightAnswerOrNot(bool right, int corectScore)
         {
@@ -44,9 +42,7 @@ namespace QuizGame
                 Console.WriteLine($"You had {corectScore} correct answers");
             }
         }
-
     }
-
 }
 
 

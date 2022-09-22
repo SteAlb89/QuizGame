@@ -3,10 +3,10 @@ using System;
 
 namespace QuizGame
 {
-    public class QuizCard
+    public class quizCard
     {
         public string Question;
-        public List<string> Answers = new List<string>(4);
+        public List<string> Answers = new List<string> {};
         public int RightAnswer;
     }
 }

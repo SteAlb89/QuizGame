@@ -9,9 +9,9 @@ namespace QuizGame
 {
     public class Logic
     {
-        public static List<QuizCard> QuizList()
+        public static List<quizCard> QuizList()
         {
-            QuizCard question1 = new QuizCard();
+            quizCard question1 = new quizCard();
             question1.Question = "What is the color of the sky?";
             question1.Answers.Add("1. Green");
             question1.Answers.Add("2. Red");
@@ -19,7 +19,7 @@ namespace QuizGame
             question1.Answers.Add("4. White");
             question1.RightAnswer = 2;
 
-            QuizCard question2 = new QuizCard();
+            quizCard question2 = new quizCard();
             question2.Question = "How many bones are in the human body?";
             question2.Answers.Add("1. 206");
             question2.Answers.Add("2. 201");
@@ -27,7 +27,7 @@ namespace QuizGame
             question2.Answers.Add("4. 207");
             question2.RightAnswer = 0;
 
-            QuizCard question3 = new QuizCard();
+            quizCard question3 = new quizCard();
             question3.Question = "What is the only food that cannot go bad?";
             question3.Answers.Add("1. Dark Chocolate");
             question3.Answers.Add("2. Peanut Butter");
@@ -35,7 +35,7 @@ namespace QuizGame
             question3.Answers.Add("4. Honey");
             question3.RightAnswer = 3;
 
-            QuizCard question4 = new QuizCard();
+            quizCard question4 = new quizCard();
             question4.Question = "Which of these EU countries does not use the euro as its currency?";
             question4.Answers.Add("1. Poland");
             question4.Answers.Add("2. Denmark");
@@ -43,7 +43,7 @@ namespace QuizGame
             question4.Answers.Add("4. All of the above");
             question4.RightAnswer = 3;
 
-            QuizCard question5 = new QuizCard();
+            quizCard question5 = new quizCard();
             question5.Question = "Which country’s national animal is a unicorn?";
             question5.Answers.Add("1. Scotland");
             question5.Answers.Add("2. New Zealand");
@@ -51,7 +51,7 @@ namespace QuizGame
             question5.Answers.Add("4. Egypt");
             question5.RightAnswer = 0;
 
-            List<QuizCard> questionList = new List<QuizCard>();
+            List<quizCard> questionList = new List<quizCard>();
             questionList.Add(question1);
             questionList.Add(question2);
             questionList.Add(question3);
@@ -61,7 +61,7 @@ namespace QuizGame
             return questionList;
         }
         //return true or false based on user input
-        public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
+        public static bool CheckAnswer(int selectedAnswer, quizCard checkAnswer )
         {
             return (checkAnswer.RightAnswer == selectedAnswer);
         }
