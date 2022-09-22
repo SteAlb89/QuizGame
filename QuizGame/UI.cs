@@ -12,12 +12,12 @@ namespace QuizGame
         public static void DisplayQuestion(quizCard question)
         {
             Console.WriteLine("************************************************");
-            Console.WriteLine(question.Question);
+            Console.WriteLine(question.question);
         }
         //Display answer 
         public static void DisplayAnswer(quizCard answer)
         {
-            answer.Answers.ForEach(Console.WriteLine);
+            answer.answer.ForEach(Console.WriteLine);
             Console.WriteLine("************************************************");
         }
         //Read user input and convert it to an index
