@@ -9,18 +9,24 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine("Welcome To Our Interactive Game ~~ QUIZ ~~~ ");
         }
-        public static void DisplayQuestion(quizCard question)
+        public static void DisplayQuestion(QuizCard quizCard)
         {
             Console.WriteLine("************************************************");
-            Console.WriteLine(question.question);
+            Console.WriteLine(quizCard.question);
         }
         //Display answer 
-        public static void DisplayAnswer(quizCard answer)
+        public static void DisplayAnswers(QuizCard quizCard)
         {
-            answer.answer.ForEach(Console.WriteLine);
+           foreach(string ans in quizCard.answers)
+            {
+                Console.WriteLine(ans);
+            }
             Console.WriteLine("************************************************");
         }
-        //Read user input and convert it to an index
+        /// <summary>
+        /// check if the number is between 1 and 4 ,and if isn't he ask again to enter another number
+        /// </summary>
+        /// <returns>return the answer minus 1</returns>
         public static int ChooseAnswer()
         {
             Console.Write("Select 1, 2, 3 or 4: ");
@@ -32,15 +38,13 @@ namespace QuizGame
             }
             return selectedAnswer - 1;
         }
-
-        //Display how many corect answers he knew
-        public static void DisplayRightAnswerOrNot(bool right, int corectScore)
+        public static void DisplayTotalScore(int correctScore)
         {
-            if (right)
-            {
-                corectScore++;
-                Console.WriteLine($"You had {corectScore} correct answers");
-            }
+            Console.WriteLine($"The total score is: {correctScore}");
+        }
+        public static void QuestionFinished()
+        {
+            Console.WriteLine("Sorry , we don't have anymore question");
         }
     }
 }

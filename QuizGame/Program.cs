@@ -8,25 +8,40 @@ namespace QuizGame
         static void Main(string[] args)
         {
             UI.DisplayWelcomeInformation();
-            List<quizCard> questionList = Logic.QuizList();
+            List<QuizCard> questionList = Logic.CreateQuizList();
 
             Random random = new Random();
 
-            for (int i = 0; i < questionList.Count; i++)
+
+            int correctScore = 0;
+            bool gameOver = false;
+            while (!gameOver)
             {
-                int j = random.Next(questionList.Count);
+                if (!(questionList.Count == 0))
+                {
+                    int j = random.Next(questionList.Count);
 
-                quizCard question = questionList[j];
+                    QuizCard question = questionList[j];
+                    UI.DisplayQuestion(question);
 
-                UI.DisplayQuestion(question);
+                    UI.DisplayAnswers(question);
 
-                UI.DisplayAnswer(question);
+                    int selectedAnswer = UI.ChooseAnswer();
 
-                int selectedAnswer = UI.ChooseAnswer();
-
-                bool corectSolution = Logic.CheckAnswer(selectedAnswer, questionList[j]);
-
-                UI.DisplayRightAnswerOrNot(corectSolution, i);
+                    bool corectSolution = Logic.CheckAnswer(selectedAnswer, question);
+                    if (corectSolution == true)
+                    {
+                        UI.DisplayTotalScore(correctScore);
+                        correctScore++;
+                    }
+                    questionList.RemoveAt(j);
+                }
+                else
+                {
+                    UI.QuestionFinished();
+                    gameOver = true;
+                }
+                
             }
             Console.ReadLine();
         }
