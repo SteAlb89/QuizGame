@@ -9,6 +9,20 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine("Welcome To Our Interactive Game ~~ QUIZ ~~~ ");
         }
+
+        public static int AskPlayFill()
+        {
+            Console.WriteLine("You may choose 1 to play or 2 to add question");
+            int answerPlayFill= Convert.ToInt32(Console.ReadLine());
+            return answerPlayFill;
+
+        }
+        public static void AskingUserToPlayOrToAddQuestions()
+        {
+            Console.WriteLine("Would you like to add question and answers or you want to play our quiz game");
+            Console.Write("You may choose 1 - for adding question ");
+            Console.WriteLine("or 2 - for playing our quiz game");
+        }
         public static void DisplayQuestion(QuizCard quizCard)
         {
             Console.WriteLine("************************************************");
@@ -38,9 +52,17 @@ namespace QuizGame
             }
             return selectedAnswer - 1;
         }
-        public static void DisplayTotalScore(int correctScore)
+        public static bool DisplayTotalScore(bool correctSolution)
         {
-            Console.WriteLine($"The total score is: {correctScore}");
+            if(correctSolution)
+            {
+                Console.WriteLine("Your answer is correct");
+            }
+            else
+            {
+                Console.WriteLine("You answer is not correct");
+            }
+            return correctSolution;
         }
         public static void QuestionFinished()
         {

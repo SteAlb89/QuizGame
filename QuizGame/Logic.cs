@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
-
+using System.Configuration;
+using System.Dynamic;
+using System.IO;
+using System.Runtime.Remoting.Messaging;
+using System.Xml.Serialization;
 
 namespace QuizGame
 {
@@ -69,6 +73,26 @@ namespace QuizGame
         public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
         {
             return (checkAnswer.rightAnswer == selectedAnswer);
+        }
+
+        public static void SaveQuizCardList(List<QuizCard>questionList, string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<QuizCard>));
+            using(FileStream file = File.Create(path))
+            {
+                serializer.Serialize(file, questionList);
+            }
+        }
+
+        public static List<QuizCard> LoaQuizCArdList(string path)
+        {
+            List<QuizCard> questionList;
+            XmlSerializer serializer = new XmlSerializer(typeof(List<QuizCard>));
+            using(FileStream file = File.OpenRead(path))
+            {
+                questionList = serializer.Deserialize(file) as List<QuizCard>;
+            }
+            return questionList;
         }
     }
 }
