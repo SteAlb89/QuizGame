@@ -8,24 +8,21 @@ namespace QuizGame
     {
         static void Main(string[] args)
         {
-
             string path = @"C:\Users\Stefan\source\repos\QuizGame\QuizGame\questionList.xml";
-
 
             UI.DisplayWelcomeInformation();
             UI.AskingUserToPlayOrToAddQuestions();
             List<QuizCard> questionList = Logic.CreateQuizList();
             Random random = new Random();
 
-           int answerPlayFill = UI.AskPlayFill();
+            int answerPlayFill = UI.AskPlayFill();
 
             if (answerPlayFill == 1)
             {
                 UI.CreateQuestion();
-                Logic.SaveQuizCardList(questionList, path) ;
+                Logic.SaveQuizCardList(questionList, path);
                 Logic.LoaQuizCArdList(path);
                 UI.AddMoreQuestions();
-
             }
             else
             {
@@ -57,9 +54,7 @@ namespace QuizGame
                         UI.QuestionFinished();
                         UI.AddMoreQuestions();
                         gameOver = true;
-
                     }
-
                 }
             }
             Console.ReadLine();

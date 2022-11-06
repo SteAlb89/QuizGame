@@ -74,7 +74,6 @@ namespace QuizGame
         {
             return (checkAnswer.rightAnswer == selectedAnswer);
         }
-
         public static void SaveQuizCardList(List<QuizCard>questionList, string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<QuizCard>));
@@ -83,7 +82,6 @@ namespace QuizGame
                 serializer.Serialize(file, questionList);
             }
         }
-
         public static List<QuizCard> LoaQuizCArdList(string path)
         {
             List<QuizCard> questionList;

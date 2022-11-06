@@ -91,7 +91,6 @@ namespace QuizGame
         {
             Console.WriteLine("Sorry , we don't have anymore question");
         }
-
         public static void AddMoreQuestions()
         {
             Console.Write("Would you like to add more questions: Y or N : ");
