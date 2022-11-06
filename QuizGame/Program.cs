@@ -21,7 +21,15 @@ namespace QuizGame
             {
                 UI.CreateQuestion();
                 Logic.SaveQuizCardList(questionList, path);
-                Logic.LoaQuizCArdList(path);
+                string moreQuestion = UI.PlayOwnQuestion();
+                if (moreQuestion == "y")
+                {
+                    Logic.LoaQuizCArdList(path);
+                }
+                else
+                {
+                    UI.QuestionFinished();
+                }
                 UI.AddMoreQuestions();
             }
             else
@@ -40,11 +48,9 @@ namespace QuizGame
                         UI.DisplayAnswers(question);
 
                         int selectedAnswer = UI.ChooseAnswer();
-
-                        bool corectSolution = Logic.CheckAnswer(selectedAnswer, question);
-                        if (corectSolution)
+                        bool correctSolution = Logic.CheckAnswer(selectedAnswer, question);
+                        if(UI.DisplayTotalScore(correctSolution))
                         {
-                            UI.DisplayTotalScore(corectSolution);
                             correctScore++;
                         }
                         questionList.RemoveAt(j);

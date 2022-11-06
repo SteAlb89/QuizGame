@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Dynamic;
 using System.IO;
@@ -72,7 +73,7 @@ namespace QuizGame
         /// <returns></returns>
         public static bool CheckAnswer(int selectedAnswer, QuizCard checkAnswer )
         {
-            return (checkAnswer.rightAnswer == selectedAnswer);
+            return checkAnswer.rightAnswer == selectedAnswer;
         }
         public static void SaveQuizCardList(List<QuizCard>questionList, string path)
         {

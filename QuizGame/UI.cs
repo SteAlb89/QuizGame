@@ -83,7 +83,7 @@ namespace QuizGame
             }
             else
             {
-                Console.WriteLine("You answer is not correct");
+                Console.WriteLine("You answer is wrong");
             }
             return correctSolution;
         }
@@ -103,6 +103,13 @@ namespace QuizGame
             {
                 Console.WriteLine("Thank you for playing");
             }
+        }
+        public static string PlayOwnQuestion()
+        {
+            Console.WriteLine("Would you like yo play your own quiz created by yourself: Y or N");
+            string playOwnQuestion = Console.ReadLine().ToLower();
+
+            return playOwnQuestion;
         }
     }
 }
