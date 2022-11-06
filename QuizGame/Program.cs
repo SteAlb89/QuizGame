@@ -9,7 +9,7 @@ namespace QuizGame
         static void Main(string[] args)
         {
 
-            var path = @"C:\tmp\questionList.xml";
+            string path = @"C:\Users\Stefan\source\repos\QuizGame\QuizGame\questionList.xml";
 
 
             UI.DisplayWelcomeInformation();
@@ -21,7 +21,9 @@ namespace QuizGame
 
             if (answerPlayFill == 1)
             {
-                Logic.SaveQuizCardList(questionList, path);
+                UI.CreateQuestion();
+                Logic.SaveQuizCardList(questionList, path) ;
+                Logic.LoaQuizCArdList(path);
 
             }
             else
@@ -57,7 +59,6 @@ namespace QuizGame
 
                 }
             }
-            Logic.SaveQuizCardList(questionList, path);
             Console.ReadLine();
         }
     }

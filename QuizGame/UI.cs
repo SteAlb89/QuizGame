@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace QuizGame
 {
@@ -12,16 +13,41 @@ namespace QuizGame
 
         public static int AskPlayFill()
         {
-            Console.WriteLine("You may choose 1 to play or 2 to add question");
+            Console.Write("You may choose:  1 to add question and 2 to play: ");
             int answerPlayFill= Convert.ToInt32(Console.ReadLine());
             return answerPlayFill;
 
         }
+
+        public static List<QuizCard> CreateQuestion()
+        {
+            QuizCard questionAnswer = new QuizCard();
+            Console.WriteLine("");
+            Console.Write("Please add your question: ");
+
+            string userQuestion = Console.ReadLine();
+            questionAnswer.question = userQuestion;
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write($"Please add the {i+1} answers: ");
+                string userAnswer = Console.ReadLine();
+                questionAnswer.answers.Add(userAnswer);
+            }
+            Console.Write("Select the number of the correct answer: ");
+            int correctAnswer = Convert.ToInt32(Console.ReadLine());
+
+            questionAnswer.rightAnswer = correctAnswer;
+            List<QuizCard> questionList = new List<QuizCard>();
+            questionList.Add(questionAnswer);
+
+            return questionList;
+        }
         public static void AskingUserToPlayOrToAddQuestions()
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Would you like to add question and answers or you want to play our quiz game");
-            Console.Write("You may choose 1 - for adding question ");
-            Console.WriteLine("or 2 - for playing our quiz game");
+            Console.WriteLine(" ");
         }
         public static void DisplayQuestion(QuizCard quizCard)
         {

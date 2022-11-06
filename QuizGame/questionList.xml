@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<ArrayOfQuizCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QuizCard>
+    <question>What is the color of the sky?</question>
+    <answers>
+      <string>1. Green</string>
+      <string>2. Red</string>
+      <string>3. Blue</string>
+      <string>4. White</string>
+    </answers>
+    <rightAnswer>2</rightAnswer>
+  </QuizCard>
+  <QuizCard>
+    <question>How many bones are in the human body?</question>
+    <answers>
+      <string>1. 206</string>
+      <string>2. 201</string>
+      <string>3. 213</string>
+      <string>4. 207</string>
+    </answers>
+    <rightAnswer>0</rightAnswer>
+  </QuizCard>
+  <QuizCard>
+    <question>What is the only food that cannot go bad?</question>
+    <answers>
+      <string>1. Dark Chocolate</string>
+      <string>2. Peanut Butter</string>
+      <string>3. Canned Tuna</string>
+      <string>4. Honey</string>
+    </answers>
+    <rightAnswer>3</rightAnswer>
+  </QuizCard>
+  <QuizCard>
+    <question>Which of these EU countries does not use the euro as its currency?</question>
+    <answers>
+      <string>1. Poland</string>
+      <string>2. Denmark</string>
+      <string>3. Sweden</string>
+      <string>4. All of the above</string>
+    </answers>
+    <rightAnswer>3</rightAnswer>
+  </QuizCard>
+  <QuizCard>
+    <question>Which country’s national animal is a unicorn?</question>
+    <answers>
+      <string>1. Scotland</string>
+      <string>2. New Zealand</string>
+      <string>3. France</string>
+      <string>4. Egypt</string>
+    </answers>
+    <rightAnswer>0</rightAnswer>
+  </QuizCard>
+</ArrayOfQuizCard>
