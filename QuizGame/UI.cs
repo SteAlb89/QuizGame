@@ -89,7 +89,7 @@ namespace QuizGame
         }
         public static void QuestionFinished()
         {
-            Console.WriteLine("Sorry , we don't have anymore question");
+            Console.WriteLine("Sorry , we don't have anymore questions");
         }
         public static void AddMoreQuestions()
         {
@@ -110,6 +110,11 @@ namespace QuizGame
             string playOwnQuestion = Console.ReadLine().ToLower();
 
             return playOwnQuestion;
+        }
+
+        public static void FinalScore(int correctScore)
+        {
+            Console.WriteLine($"Your final score is {correctScore}");
         }
     }
 }

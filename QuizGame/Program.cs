@@ -58,6 +58,7 @@ namespace QuizGame
                     else
                     {
                         UI.QuestionFinished();
+                        UI.FinalScore(correctScore);
                         UI.AddMoreQuestions();
                         gameOver = true;
                     }
