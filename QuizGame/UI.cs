@@ -10,15 +10,12 @@ namespace QuizGame
             Console.WriteLine("************************************************");
             Console.WriteLine("Welcome To Our Interactive Game ~~ QUIZ ~~~ ");
         }
-
         public static int AskPlayFill()
         {
             Console.Write("You may choose:  1 to add question and 2 to play: ");
             int answerPlayFill= Convert.ToInt32(Console.ReadLine());
             return answerPlayFill;
-
         }
-
         public static List<QuizCard> CreateQuestion()
         {
             QuizCard questionAnswer = new QuizCard();
@@ -97,7 +94,7 @@ namespace QuizGame
 
         public static void AddMoreQuestions()
         {
-            Console.Write("Would you like to add questions: Y or N : ");
+            Console.Write("Would you like to add more questions: Y or N : ");
             string addQuestion = Console.ReadLine().ToLower();
             if (addQuestion == "y")
             {

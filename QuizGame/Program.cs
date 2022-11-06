@@ -24,6 +24,7 @@ namespace QuizGame
                 UI.CreateQuestion();
                 Logic.SaveQuizCardList(questionList, path) ;
                 Logic.LoaQuizCArdList(path);
+                UI.AddMoreQuestions();
 
             }
             else
