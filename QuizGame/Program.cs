@@ -54,7 +54,9 @@ namespace QuizGame
                     else
                     {
                         UI.QuestionFinished();
+                        UI.AddMoreQuestions();
                         gameOver = true;
+
                     }
 
                 }

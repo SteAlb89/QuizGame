@@ -94,6 +94,20 @@ namespace QuizGame
         {
             Console.WriteLine("Sorry , we don't have anymore question");
         }
+
+        public static void AddMoreQuestions()
+        {
+            Console.Write("Would you like to add questions: Y or N : ");
+            string addQuestion = Console.ReadLine().ToLower();
+            if (addQuestion == "y")
+            {
+                CreateQuestion();
+            }
+            else
+            {
+                Console.WriteLine("Thank you for playing");
+            }
+        }
     }
 }
 
