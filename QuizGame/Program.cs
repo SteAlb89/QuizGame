@@ -20,10 +20,10 @@ namespace QuizGame
             if (answerPlayFill == 1)
             {
                 UI.CreateQuestion();
-                Logic.SaveQuizCardList(questionList, path);
                 string moreQuestion = UI.PlayOwnQuestion();
                 if (moreQuestion == "y")
                 {
+                    Logic.SaveQuizCardList(questionList, path);
                     Logic.LoaQuizCArdList(path);
                 }
                 else

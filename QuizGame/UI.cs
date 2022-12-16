@@ -75,7 +75,7 @@ namespace QuizGame
             }
             return selectedAnswer - 1;
         }
-        public static bool DisplayTotalScore(bool correctSolution)
+        public static void DisplayTotalScore(bool correctSolution)
         {
             if(correctSolution)
             {
@@ -85,7 +85,6 @@ namespace QuizGame
             {
                 Console.WriteLine("You answer is wrong");
             }
-            return correctSolution;
         }
         public static void QuestionFinished()
         {
