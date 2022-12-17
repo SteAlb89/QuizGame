@@ -38,7 +38,7 @@ namespace QuizGame
             List<QuizCard> questionList = new List<QuizCard>();
             questionList.Add(questionAnswer);
 
-            return questionList;
+            return CreateQuestion();
         }
         public static void DisplayQuestion(QuizCard quizCard)
         {
