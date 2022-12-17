@@ -12,7 +12,7 @@ namespace QuizGame
             string path = Directory.GetCurrentDirectory();
 
             UI.DisplayWelcomeInformation();
-            UI.AskingUserToPlayOrToAddQuestions();
+            UI.AskPlayFill();
             List<QuizCard> questionList = Logic.CreateQuizList();
             Random random = new Random();
 
@@ -21,8 +21,8 @@ namespace QuizGame
             if (answerPlayFill == 1)
             {
                 UI.CreateQuestion();
-                string moreQuestion = UI.PlayOwnQuestion();
-                if (moreQuestion == "y")
+                
+                if (UI.PlayOwnQuestion())
                 {
                     Logic.SaveQuizCardList(questionList, path);
                     Logic.LoadQuizCArdList(path);

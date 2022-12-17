@@ -98,12 +98,18 @@ namespace QuizGame
                 Console.WriteLine("Thank you for playing");
             }
         }
-        public static string PlayOwnQuestion()
+        public static bool PlayOwnQuestion()
         {
             Console.WriteLine("Would you like yo play your own quiz created by yourself: Y or N");
             string playOwnQuestion = Console.ReadLine().ToLower();
-
-            return playOwnQuestion;
+            if (playOwnQuestion == "y")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static void FinalScore(int correctScore)
