@@ -9,7 +9,7 @@ namespace QuizGame
     {
         static void Main(string[] args)
         {
-            string path = Directory.GetCurrentDirectory();
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Data\Orders\questionList.xml");
 
             UI.DisplayWelcomeInformation();
             UI.AskPlayFill();
