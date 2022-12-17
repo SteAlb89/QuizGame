@@ -39,7 +39,7 @@ namespace QuizGame
                 bool gameOver = false;
                 while (!gameOver)
                 {
-                    if (!(questionList.Count == 0))
+                    if (questionList.Count != 0)
                     {
                         int j = random.Next(questionList.Count);
 
