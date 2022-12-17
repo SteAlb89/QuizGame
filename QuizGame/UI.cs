@@ -40,12 +40,6 @@ namespace QuizGame
 
             return questionList;
         }
-        public static void AskingUserToPlayOrToAddQuestions()
-        {
-            Console.WriteLine(" ");
-            Console.WriteLine("Would you like to add question and answers or you want to play our quiz game");
-            Console.WriteLine(" ");
-        }
         public static void DisplayQuestion(QuizCard quizCard)
         {
             Console.WriteLine("************************************************");
