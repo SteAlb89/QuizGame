@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.AccessControl;
 
 namespace QuizGame
@@ -8,7 +9,7 @@ namespace QuizGame
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\Stefan\source\repos\QuizGame\QuizGame\questionList.xml";
+            string path = Directory.GetCurrentDirectory();
 
             UI.DisplayWelcomeInformation();
             UI.AskingUserToPlayOrToAddQuestions();
@@ -24,7 +25,7 @@ namespace QuizGame
                 if (moreQuestion == "y")
                 {
                     Logic.SaveQuizCardList(questionList, path);
-                    Logic.LoaQuizCArdList(path);
+                    Logic.LoadQuizCArdList(path);
                 }
                 else
                 {
@@ -49,7 +50,7 @@ namespace QuizGame
 
                         int selectedAnswer = UI.ChooseAnswer();
                         bool correctSolution = Logic.CheckAnswer(selectedAnswer, question);
-                        if(UI.DisplayTotalScore(correctSolution))
+                        if(correctSolution)
                         {
                             correctScore++;
                         }

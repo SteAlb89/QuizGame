@@ -83,7 +83,7 @@ namespace QuizGame
                 serializer.Serialize(file, questionList);
             }
         }
-        public static List<QuizCard> LoaQuizCArdList(string path)
+        public static List<QuizCard> LoadQuizCArdList(string path)
         {
             List<QuizCard> questionList;
             XmlSerializer serializer = new XmlSerializer(typeof(List<QuizCard>));

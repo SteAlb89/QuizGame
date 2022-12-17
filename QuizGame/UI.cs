@@ -77,6 +77,7 @@ namespace QuizGame
         }
         public static void DisplayTotalScore(bool correctSolution)
         {
+            
             if(correctSolution)
             {
                 Console.WriteLine("Your answer is correct");
