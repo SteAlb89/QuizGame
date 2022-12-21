@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Security.AccessControl;
+using System.Threading;
 
 namespace QuizGame
 {
@@ -9,10 +10,9 @@ namespace QuizGame
     {
         static void Main(string[] args)
         {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Data\Orders\questionList.xml");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Data\Orders\questionList.xml");
 
             UI.DisplayWelcomeInformation();
-            UI.AskPlayFill();
             List<QuizCard> questionList = Logic.CreateQuizList();
             Random random = new Random();
 
@@ -20,18 +20,23 @@ namespace QuizGame
 
             if (answerPlayFill == 1)
             {
-                UI.CreateQuestion();
-                
+                for (int i = 0;i <= 1; i++)
+                {
+                  while( UI.CreateQuestion().Count < 1);
+                  {
+                      UI.AddMoreQuestions();
+                  }
+                    UI.AskPlayFill();
+                }
                 if (UI.PlayOwnQuestion())
-                {
-                    Logic.SaveQuizCardList(questionList, path);
-                    Logic.LoadQuizCArdList(path);
-                }
-                else
-                {
-                    UI.QuestionFinished();
-                }
-                UI.AddMoreQuestions();
+                    {
+                        Logic.SaveQuizCardList(questionList, path);
+                        Logic.LoadQuizCArdList(path);
+                    }
+                    else
+                    {
+                        UI.QuestionFinished();
+                    }
             }
             else
             {
@@ -50,11 +55,14 @@ namespace QuizGame
 
                         int selectedAnswer = UI.ChooseAnswer();
                         bool correctSolution = Logic.CheckAnswer(selectedAnswer, question);
+
                         if(correctSolution)
                         {
                             correctScore++;
                         }
                         questionList.RemoveAt(j);
+                        UI.DisplayTotalScore(correctSolution);
+
                     }
                     else
                     {
@@ -63,6 +71,7 @@ namespace QuizGame
                         UI.AddMoreQuestions();
                         gameOver = true;
                     }
+
                 }
             }
             Console.ReadLine();

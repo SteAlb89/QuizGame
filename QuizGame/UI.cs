@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace QuizGame
 {
@@ -71,7 +72,6 @@ namespace QuizGame
         }
         public static void DisplayTotalScore(bool correctSolution)
         {
-            
             if(correctSolution)
             {
                 Console.WriteLine("Your answer is correct");
@@ -85,18 +85,16 @@ namespace QuizGame
         {
             Console.WriteLine("Sorry , we don't have anymore questions");
         }
-        public static void AddMoreQuestions()
+        public static bool AddMoreQuestions()
         {
             Console.Write("Would you like to add more questions: Y or N : ");
             string addQuestion = Console.ReadLine().ToLower();
+
             if (addQuestion == "y")
             {
                 CreateQuestion();
             }
-            else
-            {
-                Console.WriteLine("Thank you for playing");
-            }
+            return false;
         }
         public static bool PlayOwnQuestion()
         {
