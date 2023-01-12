@@ -17,7 +17,7 @@ namespace QuizGame
             int answerPlayFill= Convert.ToInt32(Console.ReadLine());
             return answerPlayFill;
         }
-        public static List<QuizCard> CreateQuestion()
+        public static QuizCard CreateQuestion()
         {
             QuizCard questionAnswer = new QuizCard();
             Console.WriteLine("");
@@ -39,7 +39,7 @@ namespace QuizGame
             List<QuizCard> questionList = new List<QuizCard>();
             questionList.Add(questionAnswer);
 
-            return CreateQuestion();
+            return questionAnswer;
         }
         public static void DisplayQuestion(QuizCard quizCard)
         {
