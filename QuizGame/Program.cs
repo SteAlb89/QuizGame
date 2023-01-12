@@ -18,17 +18,11 @@ namespace QuizGame
 
             int answerPlayFill = UI.AskPlayFill();
 
-            if (answerPlayFill == 1)
+            while (true)
             {
-                for (int i = 0;i <= 1; i++)
+                if (answerPlayFill == 1)
                 {
-                  while( UI.CreateQuestion().Count < 1);
-                  {
-                      UI.AddMoreQuestions();
-                  }
-                    UI.AskPlayFill();
-                }
-                if (UI.PlayOwnQuestion())
+                    if (UI.PlayOwnQuestion())
                     {
                         Logic.SaveQuizCardList(questionList, path);
                         Logic.LoadQuizCArdList(path);
@@ -37,44 +31,44 @@ namespace QuizGame
                     {
                         UI.QuestionFinished();
                     }
-            }
-            else
-            {
-                int correctScore = 0;
-                bool gameOver = false;
-                while (!gameOver)
+                }
+                else
                 {
-                    if (questionList.Count != 0)
+                    int correctScore = 0;
+                    bool gameOver = false;
+                    while (!gameOver)
                     {
-                        int j = random.Next(questionList.Count);
-
-                        QuizCard question = questionList[j];
-                        UI.DisplayQuestion(question);
-
-                        UI.DisplayAnswers(question);
-
-                        int selectedAnswer = UI.ChooseAnswer();
-                        bool correctSolution = Logic.CheckAnswer(selectedAnswer, question);
-
-                        if(correctSolution)
+                        if (questionList.Count != 0)
                         {
-                            correctScore++;
+                            int j = random.Next(questionList.Count);
+
+                            QuizCard question = questionList[j];
+                            UI.DisplayQuestion(question);
+
+                            UI.DisplayAnswers(question);
+
+                            int selectedAnswer = UI.ChooseAnswer();
+                            bool correctSolution = Logic.CheckAnswer(selectedAnswer, question);
+
+                            if (correctSolution)
+                            {
+                                correctScore++;
+                            }
+                            questionList.RemoveAt(j);
+                            UI.DisplayTotalScore(correctSolution);
+
                         }
-                        questionList.RemoveAt(j);
-                        UI.DisplayTotalScore(correctSolution);
+                        else
+                        {
+                            UI.QuestionFinished();
+                            UI.FinalScore(correctScore);
+                            UI.AddMoreQuestions();
+                            gameOver = true;
+                        }
 
                     }
-                    else
-                    {
-                        UI.QuestionFinished();
-                        UI.FinalScore(correctScore);
-                        UI.AddMoreQuestions();
-                        gameOver = true;
-                    }
-
                 }
             }
-            Console.ReadLine();
         }
     }
 }
