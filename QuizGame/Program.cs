@@ -10,7 +10,7 @@ namespace QuizGame
     {
         static void Main(string[] args)
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Data\Orders\questionList.xml");
+            string path = @"C:\\tmp\questionList.xml";
 
             UI.DisplayWelcomeInformation();
             List<QuizCard> questionList = Logic.CreateQuizList();
@@ -22,15 +22,10 @@ namespace QuizGame
             {
                 if (answerPlayFill == 1)
                 {
-                    if (UI.PlayOwnQuestion())
-                    {
                         Logic.SaveQuizCardList(questionList, path);
                         Logic.LoadQuizCArdList(path);
-                    }
-                    else
-                    {
+                        UI.PlayOwnQuestion();
                         UI.QuestionFinished();
-                    }
                 }
                 else
                 {
